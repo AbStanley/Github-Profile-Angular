@@ -15,10 +15,6 @@
     #inputSearch="ngModel"
     placeholder="Search..."
   />
-  <div *ngIf="inputSearch.invalid && inputSearch.touched" class="alert">
-    <span> Please enter a valid GitHub username. </span>
-  </div>
-
   <input class="githubForm" (click)="show()" type="submit" value="Search" />
 </form>
 

@@ -1,8 +1,8 @@
+import { RepoInterface } from './../interfaces/repo.interface';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { ProfileInterface } from '../interfaces/profile.interface';
-import { RepoInterface } from '../interfaces/repo.interface';
 
 @Injectable({
   providedIn: 'root',

@@ -14,7 +14,7 @@ import { Subscription } from 'rxjs';
 export class ProfileSearchComponent implements OnInit {
   profile!: ProfileInterface;
   repos!: RepoInterface[];
-  loading: boolean = false;
+  loading = false;
 
   constructor(
     private ProfileSearch: ProfileService,
