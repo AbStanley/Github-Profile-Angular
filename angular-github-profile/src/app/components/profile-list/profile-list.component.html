@@ -1,0 +1,55 @@
+<div class="profileCard">
+  <div class="card">
+    <div class="card-image">
+      <div class="info_box">
+        <img src="{{ profile.avatar_url }}" />
+        <div class="basicInfo">
+          <span id="info" class="card-name">Name: {{ profile.name }}</span
+          ><br />
+          <span id="info" class="card-username">Stars: {{ stars }}</span
+          ><br />
+          <span id="info" class="card-title"
+            >Repositories: {{ profile.public_repos }}</span
+          ><br />
+          <span id="info" class="card-username"
+            >Followers: {{ profile.followers }}</span
+          ><br />
+          <span id="info" class="card-company"
+            >Company:
+            {{ profile.company == null ? "No company" : profile.company }}</span
+          ><br />
+          <span id="info" class="card-website"
+            >Website:
+            {{ profile.blog == "" ? "No Website" : profile.blog }}</span
+          ><br />
+          <span id="info" class="card-location"
+            >Location: {{ profile.location }}</span
+          ><br />
+          <span id="info" class="card-member"
+            >Member since: {{ profile.created_at }}</span
+          ><br />
+          <span id="info" class="card-url">
+            <a href="{{ profile.html_url }}">{{ profile.html_url }}</a> </span
+          ><br />
+        </div>
+      </div>
+      <h3>Repositories</h3>
+
+      <div class="repos">
+        <div class="card-repo_list info" *ngFor="let repo of repo_list">
+          <label id="info-box">{{ repo.name }}</label
+          ><br />
+          <label id="info-box">{{ repo.stargazers_count }}</label
+          ><br />
+          <label id="info-box">{{ repo.forks_count }}</label
+          ><br />
+          <label id="info-box">{{ repo.watchers_count }}</label
+          ><br />
+          <label id="info-box">
+            <a href="{{ repo.html_url }}">{{ repo.html_url }}</a> </label
+          ><br />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

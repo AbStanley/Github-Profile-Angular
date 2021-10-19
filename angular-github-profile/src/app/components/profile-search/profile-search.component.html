@@ -1,0 +1,34 @@
+<form
+  class="githubForm"
+  id="githubForm"
+  class="form"
+  #personForm="ngForm"
+  (ngSubmit)="getUserInfo(personForm.value.search)"
+>
+  <label class="githubForm" for="name">GitHub username:</label>
+  <input
+    required
+    type="text"
+    name="search"
+    id="search"
+    ngModel
+    #inputSearch="ngModel"
+    placeholder="Search..."
+  />
+  <div *ngIf="inputSearch.invalid && inputSearch.touched" class="alert">
+    <span> Please enter a valid GitHub username. </span>
+  </div>
+
+  <input class="githubForm" (click)="show()" type="submit" value="Search" />
+</form>
+
+<div class="progress-loader" *ngIf="loading">
+  Loading...
+  <img src="../../../assets/load.gif" />
+</div>
+
+<app-profile-list
+  *ngIf="profile && repos"
+  [profile]="profile"
+  [repo_list]="repos"
+></app-profile-list>

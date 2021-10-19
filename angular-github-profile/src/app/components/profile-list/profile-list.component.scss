@@ -1,0 +1,155 @@
+@mixin respond($breakpoint) {
+  @if ($breakpoint == small) {
+    @media (max-width: 899px) {
+      @content;
+    }
+  }
+  @if ($breakpoint == medium) {
+    @media (min-width: 900px) and (max-width: 999px) {
+      @content;
+    }
+  }
+  @if ($breakpoint == large) {
+    @media (min-width: 1000px) and (max-width: 1240px) {
+      @content;
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+h1 {
+  text-align: center;
+}
+label {
+  padding-bottom: 10px;
+}
+
+input[type="submit"] {
+  display: block;
+  width: 100%;
+  background-color: #0d1117;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+img {
+  width: 100%;
+  height: auto;
+
+  @include respond(small) {
+  }
+}
+input[type="submit"]:hover {
+  background-color: #161f2c;
+}
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+
+  @include respond(small) {
+    padding: 10px;
+  }
+}
+
+.info_box {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  background-color: rgb(19, 25, 32);
+  box-shadow: 0 0 20px 8px #d0d0d0;
+
+  @include respond(small) {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-top: 2rem;
+  }
+}
+
+label[for="name"] {
+  display: block;
+  width: 100%;
+}
+
+span {
+  text-align: center;
+}
+.pic {
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  padding: 5px;
+  width: 15rem;
+  display: block;
+  margin: auto;
+  @include respond(small) {
+    padding: 5px;
+    width: 15rem;
+    margin-bottom: 5px;
+    display: block;
+    margin: auto;
+  }
+}
+
+.card {
+  background-color: #0d1117;
+}
+
+.repos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  @include respond(small) {
+    grid-template-columns: 1fr;
+  }
+  @include respond(medium) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include respond(large) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.card-repo_list {
+  background-color: #18212b;
+  color: rgb(207, 213, 223);
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  box-shadow: 0 0 8px 8px #e0dfdf;
+  @include respond(small) {
+    overflow: hidden;
+  }
+}
+.basicInfo {
+  width: 100%;
+  display: block;
+  color: #ddd;
+  background-color: #181e25;
+  @include respond(small) {
+    margin: 0 auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
+a {
+  color: white;
+}
+
+#info {
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1rem;
+  padding: 0.3rem;
+
+  @include respond(small) {
+    font-size: 1rem;
+    padding: 0rem;
+    max-width: 200px;
+  }
+}
