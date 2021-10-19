@@ -17,7 +17,7 @@ export class ProfileListComponent implements OnInit {
 
   ngOnInit(): void {
     this.stars = this.repo_list!.map(
-      (repo: { stargazers_count: any }) => repo.stargazers_count
-    ).reduce((acc: any, value: any) => acc + value, 0);
+      (repo: { stargazers_count: number }) => repo.stargazers_count
+    ).reduce((acc: number, value: number) => acc + value, 0);
   }
 }

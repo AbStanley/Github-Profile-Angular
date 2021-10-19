@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { ProfileInterface } from '../interfaces/profile.interface';
+import { RepoInterface } from '../interfaces/repo.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -21,7 +22,7 @@ export class ProfileService {
 
   getProfileRepositories(username: string) {
     return this.http
-      .get('https://api.github.com/users/' + username + '/repos')
+      .get<RepoInterface[]>('https://api.github.com/users/' + username + '/repos')
       .pipe(map((res) => res));
   }
 }

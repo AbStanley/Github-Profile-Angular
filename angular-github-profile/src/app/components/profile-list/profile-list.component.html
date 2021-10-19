@@ -26,7 +26,7 @@
             >Location: {{ profile.location }}</span
           ><br />
           <span id="info" class="card-member"
-            >Member since: {{ profile.created_at }}</span
+            >Member since: {{ profile.created_at | date:'shortDate'}}</span
           ><br />
           <span id="info" class="card-url">
             <a href="{{ profile.html_url }}">{{ profile.html_url }}</a> </span
@@ -37,13 +37,13 @@
 
       <div class="repos">
         <div class="card-repo_list info" *ngFor="let repo of repo_list">
-          <label id="info-box">{{ repo.name }}</label
+          <label id="info-box">Name : {{ repo.name }}</label
           ><br />
-          <label id="info-box">{{ repo.stargazers_count }}</label
+          <label id="info-box">Stars: {{ repo.stargazers_count }}</label
           ><br />
-          <label id="info-box">{{ repo.forks_count }}</label
+          <label id="info-box">Forks: {{ repo.forks_count }}</label
           ><br />
-          <label id="info-box">{{ repo.watchers_count }}</label
+          <label id="info-box">Watchers: {{ repo.watchers_count }}</label
           ><br />
           <label id="info-box">
             <a href="{{ repo.html_url }}">{{ repo.html_url }}</a> </label
